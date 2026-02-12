@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology &amp; Codebook | When Do Autocratizing Incumbents Lose Elections?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Methodology &amp; Codebook</h1>
+      <p class="subtitle">Index construction, coding rules, and data sources for the analysis.</p>
+      <nav class="nav-pills">
+        <a href="index.html">Data Explorer</a>
+        <a href="#framework">Conceptual Framework</a>
+        <a href="#codebook">Codebook</a>
+        <a href="#visibility-index">Visibility Index</a>
+        <a href="#low-visibility-index">Low-Visibility Index</a>
+        <a href="#scope-index">Scope Index</a>
+        <a href="#data-sources">Data Sources</a>
+        <a href="alternatives.html">Alternative Explanations</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conceptual Framework -->
+  <section class="section" id="framework">
+    <div class="container">
+      <h2>Conceptual Framework: Visibility and Scope</h2>
+      <p class="section-desc">The paper introduces two key dimensions for understanding how the character of autocratization shapes electoral outcomes.</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h3>Why Visibility Matters</h3>
+          <p>Democratic backsliding varies enormously in how visible it is to ordinary citizens. Some autocratizing actions&mdash;like arresting opposition politicians, shutting down newspapers, or deploying riot police against peaceful protesters&mdash;are highly visible and clearly legible as anti-democratic. Other actions&mdash;like stacking constitutional courts, changing media ownership regulations, or altering administrative procedures for NGO registration&mdash;erode democratic institutions just as effectively but are far less visible to the average voter.</p>
+          <p class="concept-detail">We theorize that visibility determines <strong>electoral legibility</strong>: whether voters can recognize autocratization as a threat to democracy and translate that awareness into a vote against the incumbent. In democracies, where the information environment is relatively open, highly visible repression may backfire on incumbents by making democratic erosion undeniable. In autocracies, even visible repression may not lead to incumbent defeat if the electoral playing field itself is compromised.</p>
+        </div>
+        <div class="concept-card">
+          <h3>Why Scope Matters</h3>
+          <p>Scope captures how many different institutional fronts the incumbent is attacking simultaneously. An autocratizer who targets only the judiciary is narrower in scope than one who simultaneously undermines the judiciary, the media, elections, and civil liberties. Broader scope means the erosion of democracy is more pervasive and potentially more difficult to reverse.</p>
+          <p class="concept-detail">Scope has an ambiguous relationship with electoral outcomes. On one hand, broader scope may signal to citizens that democracy is genuinely under threat, motivating opposition mobilization. On the other hand, broader scope may indicate that the incumbent has already accumulated enough power to manipulate elections and suppress dissent. Empirically, we find that scope is most consequential in <strong>autocracies</strong>, where it is associated with incumbent <em>survival</em>&mdash;consistent with the consolidation interpretation.</p>
+        </div>
+      </div>
+
+      <div class="concept-callout" style="margin-top:20px;">
+        <h4>Operationalization</h4>
+        <p>We measure visibility in two ways: (1) using V-Dem expert-coded indicators classified into high-visibility and low-visibility indices based on their theoretical legibility to voters, and (2) using hand-coded Freedom House country reports where each autocratizing action is coded as "visible" or "subtle." The scope index tracks the number of V-Dem institutional pillars simultaneously declining. See the detailed index construction below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Codebook -->
+  <section class="section alt" id="codebook">
+    <div class="container">
+      <h2>Codebook: Scope and Visibility of Autocratization</h2>
+      <p class="section-desc">For the hand-coded subsample of 51 post-2016 elections, we identified autocratizing actions from Freedom House country reports published annually since 2016. Each action is classified by its institutional target and coded as either <strong>subtle</strong> (procedural, legalistic, unlikely to be recognized as anti-democratic by ordinary citizens) or <strong>visible</strong> (public, physically coercive, or incontrovertibly undemocratic). Items that are subtle when carried out at small scale may be coded as visible when carried out en masse (e.g., mass closure of NGOs, mass replacement of judges).</p>
+
+      <div class="codebook-table-wrap">
+        <table class="codebook-table">
+          <thead>
+            <tr>
+              <th>Target</th>
+              <th class="col-subtle">Subtle Tactics</th>
+              <th class="col-visible">Visible Tactics</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="target-label">Media</td>
+              <td>Journalist nonviolent harassment/intimidation; Media sources fined/sued; Laws restricting or criminalizing reporting; Physical prevention of reporting</td>
+              <td>Journalists assaulted, killed, or arrested without cause; Media sources shut down</td>
+            </tr>
+            <tr>
+              <td class="target-label">Opposition</td>
+              <td>Restrictions on party registration or ballot appearance; Restrictions on campaigning/organizing; Misuse of state resources for campaigning; Gerrymandering; Election manipulation; Opposition nonviolent intimidation/co-optation</td>
+              <td>Opposition assaulted, killed, or arrested without cause; Blatant election fraud</td>
+            </tr>
+            <tr>
+              <td class="target-label">Government</td>
+              <td>Judicial stacking; Laws or reorganizations concentrating power in presidency; Disruption of checks and balances</td>
+              <td>Election delay/overstay; Removal or adjustment of term limits; Unjustifiable emergency powers or martial law; Dissolution of branch of government or unconstitutional removal of officials</td>
+            </tr>
+            <tr>
+              <td class="target-label">Civil Society</td>
+              <td>Group de-registration; CS restriction of resources; CS monitoring; CS nonviolent intimidation/harassment; International groups deported or denied entry; Demonstrations banned in advance</td>
+              <td>Critics assaulted, killed, or arrested without cause</td>
+            </tr>
+            <tr>
+              <td class="target-label">Citizens</td>
+              <td>Demonstration de-registration or denial; Nonviolent harassment</td>
+              <td>Opposition supporters assaulted, killed, or arrested without cause; Police brutality against protestors; Internet restrictions; Arrests for social media posts; Widespread disenfranchisement</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visibility Index -->
+  <section class="section" id="visibility-index">
+    <div class="container">
+      <h2>High-Visibility Index Construction</h2>
+      <p class="section-desc">The high-visibility index measures overt, publicly visible forms of autocratization using 17 expert-coded V-Dem indicators. Each indicator is standardized <em>within country</em> to capture deviation from each country's historical baseline. The final index is the mean of these within-country standardized indicators. Higher values indicate more visible repression relative to that country's typical experience.</p>
+
+      <div class="index-cards">
+        <div class="index-card">
+          <h3>Elections &amp; Fraud</h3>
+          <ul>
+            <li><strong>v2elintim</strong> &mdash; Government intimidation of opposition during elections</li>
+            <li><strong>v2elirreg</strong> &mdash; Other blatant voting irregularities</li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Civil Liberties</h3>
+          <ul>
+            <li><strong>v2clkill</strong> &mdash; Political killings</li>
+            <li><strong>v2cltort</strong> &mdash; Torture</li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Civil Society</h3>
+          <ul>
+            <li><strong>v2csreprss</strong> &mdash; Government repression of CSOs</li>
+            <li><strong>v2csrlgrep</strong> &mdash; Repression of religious organizations</li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Media</h3>
+          <ul>
+            <li><strong>v2mecenefm</strong> &mdash; Government censorship (media)</li>
+            <li><strong>v2mecenefi</strong> &mdash; Internet censorship</li>
+            <li><strong>v2meharjrn</strong> &mdash; Harassment of journalists</li>
+            <li><strong>v2meslfcen</strong> &mdash; Media self-censorship</li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Judiciary</h3>
+          <ul>
+            <li><strong>v2jupoatck</strong> &mdash; Government attacks on judiciary</li>
+            <li><strong>v2jupurge</strong> &mdash; Judicial purges</li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Digital Repression</h3>
+          <ul>
+            <li><strong>v2smgovshut</strong> &mdash; Internet shutdowns</li>
+            <li><strong>v2smgovsm</strong> &mdash; Social media shutdowns</li>
+            <li><strong>v2smgovsmcenprc</strong> &mdash; Social media censorship</li>
+            <li><strong>v2smarrest</strong> &mdash; Arrests for political online content</li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Civic Space</h3>
+          <ul>
+            <li><strong>v2caassemb</strong> &mdash; Freedom of peaceful assembly <span class="reverse-tag">reverse-coded</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Low-Visibility Index -->
+  <section class="section alt" id="low-visibility-index">
+    <div class="container">
+      <h2>Low-Visibility Index Construction</h2>
+      <p class="section-desc">The low-visibility index measures subtle, legalistic, or technical forms of autocratization that are less likely to be electorally legible without framing by elites or media. It uses 17 V-Dem indicators, standardized within country as with the high-visibility index. Higher values indicate more subtle repression.</p>
+
+      <div class="index-cards">
+        <div class="index-card">
+          <h3>Judiciary (Technical Reforms)</h3>
+          <ul>
+            <li><strong>v2jupack</strong> &mdash; Court packing</li>
+            <li><strong>v2jureform</strong> &mdash; Judicial reforms (procedural/technical)</li>
+            <li><strong>v2juhcind</strong> &mdash; High court independence <span class="reverse-tag">reverse-coded</span></li>
+            <li><strong>v2juncind</strong> &mdash; Lower court independence <span class="reverse-tag">reverse-coded</span></li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Media (Structural Bias)</h3>
+          <ul>
+            <li><strong>v2mebias</strong> &mdash; Media bias in political coverage</li>
+            <li><strong>v2mecorrpt</strong> &mdash; Media corruption or manipulation</li>
+            <li><strong>v2merange</strong> &mdash; Range of media perspectives <span class="reverse-tag">reverse-coded</span></li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Civil Society (Administrative)</h3>
+          <ul>
+            <li><strong>v2cseeorgs</strong> &mdash; CSO entry/exit regulations</li>
+            <li><strong>v2cscnsult</strong> &mdash; CSO consultation in policymaking <span class="reverse-tag">reverse-coded</span></li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Elections (Technical Engineering)</h3>
+          <ul>
+            <li><strong>v2elrgstry</strong> &mdash; Voter registry quality <span class="reverse-tag">reverse-coded</span></li>
+            <li><strong>v2elvotbuy</strong> &mdash; Vote buying</li>
+            <li><strong>v2elmulpar</strong> &mdash; Multiparty competition <span class="reverse-tag">reverse-coded</span></li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Legislature (Oversight Erosion)</h3>
+          <ul>
+            <li><strong>v2lgqstexp</strong> &mdash; Legislature questions officials <span class="reverse-tag">reverse-coded</span></li>
+            <li><strong>v2lginvstp</strong> &mdash; Legislature investigates in practice <span class="reverse-tag">reverse-coded</span></li>
+            <li><strong>v2lgotovst</strong> &mdash; Executive oversight capacity <span class="reverse-tag">reverse-coded</span></li>
+          </ul>
+        </div>
+        <div class="index-card">
+          <h3>Digital (Technical/Legal)</h3>
+          <ul>
+            <li><strong>v2smgovfilprc</strong> &mdash; Internet filtering in practice</li>
+            <li><strong>v2smdefabu</strong> &mdash; Abuse of defamation/copyright law online</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope Index -->
+  <section class="section" id="scope-index">
+    <div class="container">
+      <h2>Scope Index Construction</h2>
+      <p class="section-desc">The scope index measures the breadth of autocratization by counting the number of distinct institutional domains (pillars) under attack in each country-year. For each of six V-Dem institutional pillars, we compare the current value to the average of the previous two years. If an indicator declines by at least 0.05 on V-Dem's 0&ndash;1 scale, that pillar is classified as attacked.</p>
+
+      <div class="formula-box">
+        <p><strong>Attack on pillar <em>p</em> if:</strong> <code>x<sub>p,t</sub> &lt; x&#772;<sub>p,t-2:t-1</sub> &minus; 0.05</code></p>
+        <p><strong>Scope Count<sub>t</sub></strong> = Number of pillars under attack (range: 0&ndash;6)</p>
+        <p><strong>Scope Index<sub>t</sub></strong> = z-score(Scope Count<sub>t</sub>), standardized within country</p>
+      </div>
+
+      <h3 style="margin-top:24px; margin-bottom:12px;">The Six Institutional Pillars</h3>
+      <div class="index-cards">
+        <div class="index-card pillar-card">
+          <h3>Freedom of Expression</h3>
+          <p class="vdem-code">v2x_freexp</p>
+          <p>Citizens, media, and organizations can express opinions without censorship or fear of reprisal.</p>
+        </div>
+        <div class="index-card pillar-card">
+          <h3>Freedom of Association</h3>
+          <p class="vdem-code">v2x_frassoc_thick</p>
+          <p>The ability of individuals to organize in parties, civil society groups, and other associations.</p>
+        </div>
+        <div class="index-card pillar-card">
+          <h3>Clean Elections</h3>
+          <p class="vdem-code">v2xel_frefair</p>
+          <p>The extent to which elections are free and fair, including impartial administration and equal competition.</p>
+        </div>
+        <div class="index-card pillar-card">
+          <h3>Civil Liberties</h3>
+          <p class="vdem-code">v2xcl_rol</p>
+          <p>Protections against arbitrary state action and equality before the law.</p>
+        </div>
+        <div class="index-card pillar-card">
+          <h3>Judicial Constraints</h3>
+          <p class="vdem-code">v2x_jucon</p>
+          <p>The degree to which the judiciary can independently check executive power.</p>
+        </div>
+        <div class="index-card pillar-card">
+          <h3>Legislative Constraints</h3>
+          <p class="vdem-code">v2xlg_legcon</p>
+          <p>The extent to which the legislature exercises oversight of the executive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Sources -->
+  <section class="section alt" id="data-sources">
+    <div class="container">
+      <h2>Data Sources</h2>
+      <p class="section-desc">The analysis draws on the following data sources. All data are publicly available.</p>
+
+      <div class="table-wrap">
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Variables Used</th>
+              <th>Coverage</th>
+              <th>Reference</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>V-Dem (Varieties of Democracy)</strong></td>
+              <td>Electoral Democracy Index (EDI/polyarchy); 17 high-visibility indicators; 17 low-visibility indicators; 6 scope pillars; horizontal &amp; vertical constraints; polarization; mass mobilization</td>
+              <td>1789&ndash;2024, 202 countries</td>
+              <td>Coppedge et al. (2025)</td>
+            </tr>
+            <tr>
+              <td><strong>V-Dem Episodes of Regime Transformation (ERT)</strong></td>
+              <td>Autocratization episode start/end years; episode classification</td>
+              <td>1900&ndash;2024</td>
+              <td>Edgell et al. (2020); Maerz et al. (2024)</td>
+            </tr>
+            <tr>
+              <td><strong>Freedom House Country Reports</strong></td>
+              <td>Hand-coded scope and visibility of autocratizing actions (51 elections, 2016&ndash;2024)</td>
+              <td>2016&ndash;2023 (annual reports)</td>
+              <td>Freedom House (2016&ndash;2023)</td>
+            </tr>
+            <tr>
+              <td><strong>World Bank (World Development Indicators)</strong></td>
+              <td>GDP growth (%); Unemployment rate (%); GDP (log)</td>
+              <td>1960&ndash;2024, 217 countries</td>
+              <td>World Bank (2025)</td>
+            </tr>
+            <tr>
+              <td><strong>Citizen Support for Democracy</strong></td>
+              <td>Latent society-year support for democracy variable</td>
+              <td>1988&ndash;2020, 144 countries</td>
+              <td>Claassen (2020); Tai et al. (2022)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&ldquo;When Do Autocratizing Incumbents Lose Elections?&rdquo;</p>
+      <p class="small">Data sources: V-Dem, Freedom House, World Bank. Website for research purposes only.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When Do Autocratizing Incumbents Lose Elections?</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script src="data_embedded.js"></script>
+  <script src="election_details.js"></script>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>When Do Autocratizing Incumbents Lose Elections?</h1>
+      <p class="subtitle">Interactive companion to the research paper.<br>
+        Explore data from 105 re-election contests across 63 countries (1995&ndash;2024).</p>
+      <nav class="nav-pills">
+        <a href="#map">Map</a>
+        <a href="#explorer">Election Explorer</a>
+        <a href="#concepts">Key Concepts</a>
+        <a href="#bootstrap">Bootstrap Results</a>
+        <a href="#handcoded">Scope &amp; Visibility</a>
+        <a href="#datasheets">Coding Datasheets</a>
+        <a href="#casestudy">Case Studies</a>
+        <a href="alternatives.html">Alternative Explanations</a>
+        <a href="methodology.html">Methodology &amp; Codebook</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section class="section" id="findings">
+    <div class="container">
+      <h2>Overview</h2>
+      <p class="section-desc">This website provides interactive access to the data underlying the paper. We identify 105 elections in which an autocratizing incumbent (or their party) sought re-election during an episode of democratic erosion. The dataset spans 63 countries from 1995 to 2024. A subsample of 51 post-2016 elections is hand-coded from Freedom House country reports to measure the scope and visibility of autocratizing acts.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-number">105</div>
+          <div class="card-label">Elections</div>
+          <div class="card-detail">63 countries, 1995&ndash;2024</div>
+        </div>
+        <div class="card">
+          <div class="card-number">29</div>
+          <div class="card-label">Incumbents Defeated</div>
+          <div class="card-detail">28% overall defeat rate</div>
+        </div>
+        <div class="card">
+          <div class="card-number">39%</div>
+          <div class="card-label">Defeated in Democracies</div>
+          <div class="card-detail">21 of 54 elections</div>
+        </div>
+        <div class="card">
+          <div class="card-number">16%</div>
+          <div class="card-label">Defeated in Autocracies</div>
+          <div class="card-detail">8 of 51 elections</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- World Map -->
+  <section class="section alt" id="map">
+    <div class="container">
+      <h2>Geographic Distribution of Cases</h2>
+      <p class="section-desc">Countries with at least one re-election contest during an episode of autocratization. Color indicates the number of elections in the dataset. Hover for details.</p>
+      <div id="plot-map" class="plot-container" style="min-height:460px;"></div>
+    </div>
+  </section>
+
+  <!-- Election Explorer Table -->
+  <section class="section" id="explorer">
+    <div class="container">
+      <h2>Election Explorer</h2>
+      <p class="section-desc">Browse all 105 elections in the dataset. Each row is one re-election contest during an episode of autocratization. Indicators are pre-election means (t&minus;3 to t&minus;1), within-country standardized. Click column headers to sort. Click any row with a &#9432; icon to see election details (incumbent, challenger, vote shares, and electoral system).</p>
+      <div class="controls">
+        <select id="filter-regime">
+          <option value="all">All regimes</option>
+          <option value="Democracy">Democracies</option>
+          <option value="Autocracy">Autocracies</option>
+        </select>
+        <select id="filter-outcome">
+          <option value="all">All outcomes</option>
+          <option value="lost">Incumbent lost</option>
+          <option value="won">Incumbent won</option>
+        </select>
+        <input type="text" id="filter-search" placeholder="Search country...">
+      </div>
+      <div class="table-wrap">
+        <table id="election-table">
+          <thead>
+            <tr>
+              <th data-sort="country">Country</th>
+              <th data-sort="year">Year</th>
+              <th data-sort="regime">Regime</th>
+              <th data-sort="outcome">Outcome</th>
+              <th data-sort="polyarchy">Polyarchy</th>
+              <th data-sort="visibility">Visibility</th>
+              <th data-sort="scope">Scope</th>
+              <th data-sort="horizontal">Horiz. Constraints</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="table-count" id="table-count"></div>
+      <div id="election-detail" class="election-detail" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- Key Concepts -->
+  <section class="section alt" id="concepts">
+    <div class="container">
+      <h2>Key Concepts</h2>
+      <p class="section-desc">Our analysis focuses on two dimensions of autocratization that shape whether incumbents can get away with democratic erosion at the ballot box.</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h3>Visibility of Autocratization</h3>
+          <p>Not all forms of autocratization are equally visible to voters. We distinguish between <strong>high-visibility</strong> repression&mdash;overt, physically coercive, or incontrovertibly undemocratic actions such as jailing opposition leaders, shutting down media outlets, or using violence against protesters&mdash;and <strong>low-visibility</strong> repression&mdash;subtle, legalistic, or technical maneuvers such as court packing, regulatory changes to media ownership, or procedural restrictions on civil society organizations.</p>
+          <p class="concept-detail">The key insight is that high-visibility repression is more <em>electorally legible</em>: ordinary citizens can recognize these actions as threats to democracy without requiring elite framing or specialized knowledge. Low-visibility actions, by contrast, may erode democratic institutions just as effectively but are less likely to trigger voter backlash because they are harder to detect and interpret.</p>
+          <p class="concept-link"><a href="methodology.html#visibility-index">See Visibility Index construction &rarr;</a></p>
+        </div>
+
+        <div class="concept-card">
+          <h3>Scope of Autocratization</h3>
+
+          <p>Scope measures the <strong>breadth</strong> of democratic erosion&mdash;how many distinct institutional domains are simultaneously under attack. Rather than measuring the depth of any single dimension, scope captures whether an incumbent is targeting the judiciary <em>and</em> the media <em>and</em> elections <em>and</em> civil liberties at the same time.</p>
+          <p class="concept-detail">We operationalize scope by tracking six V-Dem institutional pillars (freedom of expression, freedom of association, clean elections, civil liberties, judicial constraints, and legislative constraints). When an indicator declines by at least 0.05 on V-Dem's 0&ndash;1 scale relative to its recent average, that pillar is classified as &ldquo;under attack.&rdquo; The scope count is the number of pillars simultaneously eroding. Broader scope may signal to voters that democratic backsliding is pervasive, or it may indicate that the incumbent has consolidated enough power to prevent electoral accountability.</p>
+          <p class="concept-link"><a href="methodology.html#scope-index">See Scope Index construction &rarr;</a></p>
+        </div>
+      </div>
+
+      <div class="concept-callout">
+        <h4>What Do We Find?</h4>
+        <p>High-visibility repression is associated with a <strong>higher probability of incumbent defeat</strong> in the pooled sample. This effect is concentrated in democracies, where information environments are more open and voters can more readily translate their awareness of repression into electoral punishment. In autocracies, the relationship is weaker: even visible repression may not lead to defeat when elections themselves are compromised. Meanwhile, the erosion of <strong>horizontal constraints</strong> (checks and balances) also predicts defeat, suggesting that institutional degradation can signal regime vulnerability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap Coefficient Plot -->
+  <section class="section" id="bootstrap">
+    <div class="container">
+      <h2>Bivariate Bootstrap Estimates</h2>
+      <p class="section-desc">Each coefficient is from a separate bivariate OLS regression of incumbent defeat (1/0) on a standardized predictor. Estimates use pre-election means (t&minus;3 to t&minus;1). Thick bars show 90% bootstrap CIs; thin bars show 95% CIs (1,000 replications). Filled points denote significance at the 90% level. Positive values indicate a greater likelihood of incumbent defeat.</p>
+      <div class="controls">
+        <label>Regime filter:</label>
+        <button class="btn active" data-regime="Pooled">Pooled</button>
+        <button class="btn" data-regime="Democracy">Democracy</button>
+        <button class="btn" data-regime="Autocracy">Autocracy</button>
+        <button class="btn" data-regime="all">Compare All</button>
+      </div>
+      <div id="plot-bootstrap" class="plot-container"></div>
+    </div>
+  </section>
+
+  <!-- Hand-Coded Scatter -->
+  <section class="section alt" id="handcoded">
+    <div class="container">
+      <h2>Scope and Visibility of Autocratization (Hand-Coded)</h2>
+      <p class="section-desc">Based on 51 post-2016 elections hand-coded from Freedom House country reports. Each point is one election. <em>Scope</em> counts the number of distinct autocratizing tactics used by the incumbent in the 24 months prior to the election. <em>Visible tactics</em> are overt, public, or violent actions clearly legible as undemocratic; <em>subtle tactics</em> are procedural or institutional changes less likely to be noticed by ordinary citizens. Hover over a point for details.</p>
+      <div class="controls">
+        <label>Color by:</label>
+        <button class="btn active" data-color="outcome">Election Outcome</button>
+        <button class="btn" data-color="regime">Regime Type</button>
+      </div>
+      <div id="plot-scatter" class="plot-container"></div>
+    </div>
+  </section>
+
+  <!-- Coding Datasheets -->
+  <section class="section" id="datasheets">
+    <div class="container">
+      <h2>Freedom House Coding Datasheets</h2>
+      <p class="section-desc">Browse the detailed hand-coding for each of the 51 post-2016 elections. Each entry records an autocratizing action identified from Freedom House country reports, including the year, a description, the institutional target, and whether the action was coded as subtle or visible.</p>
+      <div class="controls">
+        <select id="ds-election">
+          <option value="">Select an election...</option>
+        </select>
+      </div>
+      <div id="ds-summary" class="ds-summary"></div>
+      <div class="table-wrap">
+        <table id="ds-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Action</th>
+              <th>Target</th>
+              <th>Code</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Timeline -->
+  <section class="section alt" id="casestudy">
+    <div class="container">
+      <h2>Case Study Timelines</h2>
+      <p class="section-desc">Explore how key indicators evolved relative to the election year (t=0) for each election. The x-axis shows years before and after the election. Select an election and indicator to plot. Note: some indicators may have missing values for certain years depending on data availability.</p>
+      <div class="controls">
+        <select id="case-election"></select>
+        <select id="case-indicator">
+          <option value="v2x_polyarchy">Polyarchy (EDI)</option>
+          <option value="visibility_index">Visibility Index</option>
+          <option value="low_visibility_index">Low Visibility Index</option>
+          <option value="scope_index">Scope Index</option>
+          <option value="horizontal_constraints">Horizontal Constraints</option>
+          <option value="vertical_constraints">Vertical Constraints</option>
+          <option value="gdp_growth">GDP Growth</option>
+          <option value="unemployment">Unemployment</option>
+          <option value="polarization">Polarization</option>
+          <option value="mass_mobilization">Mass Mobilization</option>
+        </select>
+      </div>
+      <div id="plot-timeline" class="plot-container"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&ldquo;When Do Autocratizing Incumbents Lose Elections?&rdquo;</p>
+      <p class="small">Data sources: V-Dem, Freedom House, World Bank. Website for research purposes only.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

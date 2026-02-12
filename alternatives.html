@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternative Explanations | When Do Autocratizing Incumbents Lose Elections?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Exploring Alternative Explanations</h1>
+      <p class="subtitle">Economic voting, political culture, institutional constraints, and endogeneity concerns.</p>
+      <nav class="nav-pills">
+        <a href="index.html">Data Explorer</a>
+        <a href="#overview">Overview</a>
+        <a href="#economic">Economic Voting</a>
+        <a href="#culture">Political Culture</a>
+        <a href="#institutions">Institutional Constraints</a>
+        <a href="#endogeneity">Endogeneity</a>
+        <a href="#robustness">Robustness</a>
+        <a href="methodology.html">Methodology</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section class="section" id="overview">
+    <div class="container">
+      <h2>Overview</h2>
+      <p class="section-desc">Our main finding is that the visibility of autocratization predicts incumbent defeat. But could other factors explain this pattern? We examine several classes of alternative explanations: economic conditions, political culture, institutional constraints, and the possibility that the relationship between visibility and defeat is driven by reverse causality.</p>
+
+      <div class="concept-callout">
+        <h4>Summary of Findings</h4>
+        <p>Across all alternatives examined, the visibility of autocratization remains the strongest and most robust predictor of incumbent defeat. Economic conditions matter in some specifications but show unexpected patterns. Political culture variables are largely unrelated to electoral outcomes in our data. Horizontal constraints predict defeat, consistent with the idea that institutional checks enable electoral accountability. Tests for reverse causality (approval ratings, opposition strength) strengthen rather than undermine the causal interpretation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Economic Voting -->
+  <section class="section alt" id="economic">
+    <div class="container">
+      <h2>Economic Voting</h2>
+      <p class="section-desc">A longstanding finding in political science is that voters punish incumbents for poor economic performance. Do economic conditions, rather than the character of autocratization, explain when incumbents lose?</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h3>GDP Growth</h3>
+          <p>In the pooled sample, GDP growth shows a negative but non-significant association with incumbent defeat (&beta; = &minus;0.07, 90% CI [&minus;0.14, 0.00], N = 102). The direction is intuitive&mdash;higher growth is associated with lower defeat probability&mdash;but the relationship does not reach conventional significance levels.</p>
+          <p class="concept-detail">When disaggregated by regime type, the relationship is significant in <strong>democracies</strong> (&beta; = &minus;0.13, 90% CI [&minus;0.23, &minus;0.02], N = 53), where economic performance appears to function as a retrospective voting cue. In autocracies, there is no significant relationship (&beta; = 0.00, N = 49).</p>
+        </div>
+
+        <div class="concept-card">
+          <h3>Unemployment</h3>
+          <p>Higher pre-election unemployment is associated with <em>lower</em> odds of incumbent defeat in the pooled sample (&beta; = &minus;0.06, 90% CI [&minus;0.11, 0.00], N = 102). This unexpected direction may reflect the composition of our sample rather than a true causal effect.</p>
+          <p class="concept-detail">Many elections where incumbents lost occurred in economically advanced democracies with low unemployment (e.g., Poland, Czech Republic, South Korea, United States), while some autocratizing incumbents survived in contexts of high unemployment (e.g., North Macedonia, South Africa). The relationship persists in <strong>autocracies</strong> (&beta; = &minus;0.05, 90% CI [&minus;0.10, &minus;0.01], N = 49) but is not significant in democracies.</p>
+        </div>
+      </div>
+
+      <div class="alt-result-table">
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Sample</th>
+              <th>&beta;</th>
+              <th>90% CI</th>
+              <th>N</th>
+              <th>Significant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GDP Growth</td>
+              <td>Pooled</td>
+              <td>&minus;0.07</td>
+              <td>[&minus;0.14, 0.00]</td>
+              <td>102</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>GDP Growth</td>
+              <td>Democracy</td>
+              <td>&minus;0.13</td>
+              <td>[&minus;0.23, &minus;0.02]</td>
+              <td>53</td>
+              <td class="type-visible">Yes</td>
+            </tr>
+            <tr>
+              <td>GDP Growth</td>
+              <td>Autocracy</td>
+              <td>0.00</td>
+              <td>[&minus;0.08, 0.09]</td>
+              <td>49</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Unemployment</td>
+              <td>Pooled</td>
+              <td>&minus;0.06</td>
+              <td>[&minus;0.11, 0.00]</td>
+              <td>102</td>
+              <td class="type-visible">Yes</td>
+            </tr>
+            <tr>
+              <td>Unemployment</td>
+              <td>Democracy</td>
+              <td>&minus;0.07</td>
+              <td>[&minus;0.16, 0.04]</td>
+              <td>53</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Unemployment</td>
+              <td>Autocracy</td>
+              <td>&minus;0.05</td>
+              <td>[&minus;0.10, &minus;0.01]</td>
+              <td>49</td>
+              <td class="type-visible">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Political Culture -->
+  <section class="section" id="culture">
+    <div class="container">
+      <h2>Political Culture</h2>
+      <p class="section-desc">Several theories suggest that citizen attitudes and societal dynamics should shape whether voters punish autocratizing incumbents. We examine three dimensions: citizen support for democracy, societal polarization, and mass mobilization.</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h3>Citizen Support for Democracy</h3>
+          <p>If citizens in some countries value democracy more than others, those countries might be more likely to punish incumbents who erode democratic institutions. We measure this using a latent variable of society-level support for democracy aggregated from cross-national surveys.</p>
+          <p class="concept-detail">In the pooled sample, citizen support shows no significant relationship with defeat (&beta; = &minus;0.07, 90% CI [&minus;0.14, 0.01], N = 80). The relationship is significant in <strong>democracies</strong> (&beta; = &minus;0.13, 90% CI [&minus;0.23, &minus;0.03], N = 44), but the direction is <em>negative</em>&mdash;higher support for democracy is associated with <em>less</em> incumbent defeat, contrary to the Democratic Commitment Hypothesis. This unexpected finding may reflect that strong pro-democracy attitudes in democracies correlate with institutional stability that benefits incumbents.</p>
+        </div>
+
+        <div class="concept-card">
+          <h3>Polarization</h3>
+          <p>Polarization could either entrench incumbents (by locking voters into partisan camps) or facilitate their defeat (by mobilizing the opposition). We measure polarization using V-Dem expert assessments of societal division.</p>
+          <p class="concept-detail">Polarization shows no significant association with incumbent defeat in any sample: pooled (&beta; = &minus;0.03), democracy (&beta; = 0.01), or autocracy (&beta; = &minus;0.04). The Polarization Hypothesis receives limited support in the bivariate specifications. The case of Poland, however, suggests that polarization can play a contextual role, as it mobilized young, liberal voters against PiS in 2023.</p>
+        </div>
+      </div>
+
+      <div class="concept-grid" style="margin-top:16px;">
+        <div class="concept-card">
+          <h3>Mass Mobilization</h3>
+          <p>Could protest movements and civic mobilization contribute to incumbent defeat? We measure mass mobilization using V-Dem indicators of popular protest and civic engagement.</p>
+          <p class="concept-detail">Mass mobilization is unrelated to defeat in all samples: pooled (&beta; = &minus;0.01), democracy (&beta; = 0.04), and autocracy (&beta; = &minus;0.05). None approach significance. While mobilization may matter in individual cases (e.g., high turnout in Zambia 2021, youth mobilization in Poland 2023), it does not emerge as a systematic predictor across the full sample of autocratizing elections.</p>
+        </div>
+      </div>
+
+      <div class="alt-result-table">
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Sample</th>
+              <th>&beta;</th>
+              <th>90% CI</th>
+              <th>N</th>
+              <th>Significant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Citizen Support</td>
+              <td>Pooled</td>
+              <td>&minus;0.07</td>
+              <td>[&minus;0.14, 0.01]</td>
+              <td>80</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Citizen Support</td>
+              <td>Democracy</td>
+              <td>&minus;0.13</td>
+              <td>[&minus;0.23, &minus;0.03]</td>
+              <td>44</td>
+              <td class="type-visible">Yes</td>
+            </tr>
+            <tr>
+              <td>Citizen Support</td>
+              <td>Autocracy</td>
+              <td>&minus;0.01</td>
+              <td>[&minus;0.12, 0.10]</td>
+              <td>36</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Polarization</td>
+              <td>Pooled</td>
+              <td>&minus;0.03</td>
+              <td>[&minus;0.10, 0.04]</td>
+              <td>103</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Polarization</td>
+              <td>Democracy</td>
+              <td>0.01</td>
+              <td>[&minus;0.11, 0.11]</td>
+              <td>54</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Polarization</td>
+              <td>Autocracy</td>
+              <td>&minus;0.04</td>
+              <td>[&minus;0.11, 0.03]</td>
+              <td>49</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Mass Mobilization</td>
+              <td>Pooled</td>
+              <td>&minus;0.01</td>
+              <td>[&minus;0.09, 0.06]</td>
+              <td>103</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Mass Mobilization</td>
+              <td>Democracy</td>
+              <td>0.04</td>
+              <td>[&minus;0.06, 0.15]</td>
+              <td>54</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Mass Mobilization</td>
+              <td>Autocracy</td>
+              <td>&minus;0.05</td>
+              <td>[&minus;0.13, 0.03]</td>
+              <td>49</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutional Constraints -->
+  <section class="section alt" id="institutions">
+    <div class="container">
+      <h2>Institutional Constraints</h2>
+      <p class="section-desc">Do checks and balances&mdash;the strength of constraints on executive power&mdash;shape whether voters can hold autocratizing incumbents accountable? We examine horizontal constraints (inter-branch checks) and vertical constraints (sub-national and federalist checks).</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h3>Horizontal Constraints</h3>
+          <p>Horizontal constraints measure the quality of checks and balances between branches of government. Stronger constraints mean the judiciary and legislature can still hold the executive accountable, which may also facilitate electoral accountability.</p>
+          <p class="concept-detail">This is the second strongest predictor after visibility. In the pooled sample, stronger horizontal constraints are significantly associated with incumbent defeat (&beta; = 0.11, 90% CI [0.05, 0.18], N = 103). The effect is concentrated in <strong>autocracies</strong> (&beta; = 0.08, 90% CI [0.00, 0.16], N = 49), where intact checks and balances may represent an institutional space that allows opposition mobilization and fair vote counting even under otherwise authoritarian conditions. In democracies, the effect is positive but not significant (&beta; = 0.05, N = 54).</p>
+        </div>
+
+        <div class="concept-card">
+          <h3>Vertical Constraints</h3>
+          <p>Vertical constraints capture the extent of sub-national checks on executive power, including federalism and local government autonomy.</p>
+          <p class="concept-detail">Vertical constraints show a positive but non-significant association with defeat in the pooled sample (&beta; = 0.04, 90% CI [&minus;0.03, 0.11], N = 103). In democracies, the coefficient turns negative (&beta; = &minus;0.07, N = 54), and in autocracies it is also negative and non-significant (&beta; = &minus;0.05, N = 49). Unlike horizontal constraints, vertical constraints do not appear to systematically predict incumbent defeat.</p>
+        </div>
+      </div>
+
+      <div class="alt-result-table">
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Sample</th>
+              <th>&beta;</th>
+              <th>90% CI</th>
+              <th>N</th>
+              <th>Significant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Horizontal Constraints</td>
+              <td>Pooled</td>
+              <td>0.11</td>
+              <td>[0.05, 0.18]</td>
+              <td>103</td>
+              <td class="type-visible">Yes</td>
+            </tr>
+            <tr>
+              <td>Horizontal Constraints</td>
+              <td>Democracy</td>
+              <td>0.05</td>
+              <td>[&minus;0.06, 0.16]</td>
+              <td>54</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Horizontal Constraints</td>
+              <td>Autocracy</td>
+              <td>0.08</td>
+              <td>[0.00, 0.16]</td>
+              <td>49</td>
+              <td class="type-visible">Yes</td>
+            </tr>
+            <tr>
+              <td>Vertical Constraints</td>
+              <td>Pooled</td>
+              <td>0.04</td>
+              <td>[&minus;0.03, 0.11]</td>
+              <td>103</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Vertical Constraints</td>
+              <td>Democracy</td>
+              <td>&minus;0.07</td>
+              <td>[&minus;0.19, 0.05]</td>
+              <td>54</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Vertical Constraints</td>
+              <td>Autocracy</td>
+              <td>&minus;0.05</td>
+              <td>[&minus;0.14, 0.02]</td>
+              <td>49</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Endogeneity / Alternative Causal Pathways -->
+  <section class="section" id="endogeneity">
+    <div class="container">
+      <h2>Alternative Causal Pathways</h2>
+      <p class="section-desc">Even if visibility predicts defeat, the causal arrow might run differently than we theorize. We consider two important endogeneity concerns: that declining approval drives both visibility and defeat, and that strong opposition drives both visibility and defeat.</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h3>Incumbent Approval &rarr; Visibility?</h3>
+          <p>It is possible that incumbents facing declining public support turn to more visible forms of repression out of desperation, making the correlation between visibility and defeat spurious&mdash;both would be driven by declining approval.</p>
+          <p class="concept-detail">We test this using time-series-cross-sectional regression of visibility and scope on Gallup World Poll approval ratings (2006&ndash;2024) with country and year fixed effects. <strong>Contrary to this alternative explanation</strong>, we find that higher approval is associated with <em>more</em> visible autocratization in subsequent years (&beta; = 0.44, p &lt; 0.10), not less. Popular incumbents appear to feel emboldened to pursue more aggressive strategies. Declining public support cannot explain the correlation between visible autocratization and electoral defeat.</p>
+        </div>
+
+        <div class="concept-card">
+          <h3>Opposition Strength &rarr; Visibility?</h3>
+          <p>It is plausible that incumbents facing strong opposition adopt more visible tactics to counter this threat, making the correlation between visibility and defeat spurious&mdash;both would be driven by opposition strength.</p>
+          <p class="concept-detail"><strong>The evidence directly contradicts this</strong>. Using V-Dem indicators of legislative oversight, opposition autonomy, and opposition vote/seat share, we find that stronger opposition is associated with <em>less</em> visible autocratization. Incumbents facing weak opposition are the ones who engage in more brazen, visible tactics, possibly because they feel secure enough to act openly. This rules out the confounding story and strengthens the causal interpretation. For scope, we find a different pattern: stronger opposition is associated with broader attacks across more institutional domains.</p>
+        </div>
+      </div>
+
+      <div class="concept-callout">
+        <h4>Implication</h4>
+        <p>Both endogeneity tests strengthen rather than undermine the causal interpretation of our main finding. The relationship between visible autocratization and electoral defeat cannot be explained away by either declining incumbent popularity or strong opposition, because the direction of the relationships is inconsistent with the confounding stories.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robustness Checks -->
+  <section class="section alt" id="robustness">
+    <div class="container">
+      <h2>Robustness Checks</h2>
+      <p class="section-desc">We conduct four sets of robustness checks to validate the visibility finding. Across all specifications, visibility emerges as a robust predictor of incumbent electoral defeat.</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-number">1</div>
+          <div class="card-label">Multivariate Controls</div>
+          <div class="card-detail">The visibility coefficient remains positive (0.08&ndash;0.10) when we progressively add horizontal constraints, economic controls, and polarization. In the full model, both visibility (&beta; = 0.10) and horizontal constraints (&beta; = 0.10) remain significant.</div>
+        </div>
+        <div class="card">
+          <div class="card-number">2</div>
+          <div class="card-label">Firth Logistic Regression</div>
+          <div class="card-detail">Penalized logistic regression addresses rare-event bias. The pattern of significance is consistent with OLS: visibility and horizontal constraints remain significant. The rank ordering of predictors is preserved across estimation strategies.</div>
+        </div>
+        <div class="card">
+          <div class="card-number">3</div>
+          <div class="card-label">Levels vs. Changes</div>
+          <div class="card-detail">Level measures (pre-election means) outperform shift measures (changes from prior period). High visibility shows a significant level effect (&beta; = 0.09) but no significant shift effect (&beta; = 0.03), suggesting the accumulated stock of visible acts matters more than recent changes.</div>
+        </div>
+        <div class="card">
+          <div class="card-number">4</div>
+          <div class="card-label">Influence Diagnostics</div>
+          <div class="card-detail">Leave-one-out diagnostics show the visibility coefficient ranges from 0.08 to 0.11 when each election is excluded. No single case changes the sign or significance of the effect. The most influential elections come from diverse countries.</div>
+        </div>
+      </div>
+
+      <div class="concept-callout" style="margin-top:24px;">
+        <h4>Comparing Main Predictors</h4>
+        <p>The table below compares the main predictors from the paper. Positive coefficients indicate a greater likelihood of incumbent defeat. High visibility and horizontal constraints emerge as the most consistent predictors across samples and specifications.</p>
+      </div>
+
+      <div class="alt-result-table" style="margin-top:16px;">
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Pooled &beta;</th>
+              <th>Democracy &beta;</th>
+              <th>Autocracy &beta;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>High Visibility</strong></td>
+              <td class="type-visible">0.09*</td>
+              <td class="type-visible">0.15*</td>
+              <td>0.06</td>
+            </tr>
+            <tr>
+              <td>Low Visibility</td>
+              <td>0.05</td>
+              <td class="type-visible">0.15*</td>
+              <td>0.01</td>
+            </tr>
+            <tr>
+              <td>Scope</td>
+              <td>0.01</td>
+              <td>0.08</td>
+              <td class="type-visible">&minus;0.05*</td>
+            </tr>
+            <tr>
+              <td><strong>Horizontal Constraints</strong></td>
+              <td class="type-visible">0.11*</td>
+              <td>0.05</td>
+              <td class="type-visible">0.08*</td>
+            </tr>
+            <tr>
+              <td>Vertical Constraints</td>
+              <td>0.04</td>
+              <td>&minus;0.07</td>
+              <td>&minus;0.05</td>
+            </tr>
+            <tr>
+              <td>GDP Growth</td>
+              <td>&minus;0.07</td>
+              <td class="type-visible">&minus;0.13*</td>
+              <td>0.00</td>
+            </tr>
+            <tr>
+              <td>Unemployment</td>
+              <td class="type-visible">&minus;0.06*</td>
+              <td>&minus;0.07</td>
+              <td class="type-visible">&minus;0.05*</td>
+            </tr>
+            <tr>
+              <td>Citizen Support</td>
+              <td>&minus;0.07</td>
+              <td class="type-visible">&minus;0.13*</td>
+              <td>&minus;0.01</td>
+            </tr>
+            <tr>
+              <td>Polarization</td>
+              <td>&minus;0.03</td>
+              <td>0.01</td>
+              <td>&minus;0.04</td>
+            </tr>
+            <tr>
+              <td>Mass Mobilization</td>
+              <td>&minus;0.01</td>
+              <td>0.04</td>
+              <td>&minus;0.05</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.82rem; color:#6b7280; margin-top:8px;">* Significant at the 90% level. Coefficients are standardized bivariate OLS estimates with bootstrap confidence intervals (1,000 replications). Positive values indicate a greater likelihood of incumbent defeat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&ldquo;When Do Autocratizing Incumbents Lose Elections?&rdquo;</p>
+      <p class="small">Data sources: V-Dem, Freedom House, World Bank, Gallup World Poll. Website for research purposes only.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
