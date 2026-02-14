@@ -29,6 +29,16 @@ body {
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
 /* === Hero === */
+/* === Page Header === */
+.page-header {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 24px 0 16px;
+  text-align: center;
+}
+.page-header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+.page-header .authors { font-size: 1rem; opacity: 0.85; font-weight: 400; margin: 0; }
+
 .hero {
   background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
   color: #fff;
@@ -37,7 +47,18 @@ body {
 }
 .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
 .hero .authors { font-size: 1.1rem; opacity: 0.9; margin-bottom: 4px; }
-.hero .subtitle { font-size: 0.95rem; opacity: 0.75; margin-bottom: 24px; }
+.hero .subtitle { font-size: 0.95rem; opacity: 0.75; margin-bottom: 12px; }
+.hero .preprint-link { margin-bottom: 24px; }
+.hero .preprint-link a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.hero .preprint-link a:hover { background: rgba(255,255,255,0.15); }
 
 .nav-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .nav-pills a {
